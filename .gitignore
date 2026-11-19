@@ -2,3 +2,5 @@ build/
 .scratch/
 *.user
 __pycache__/
+web/node_modules/
+web/dist/
