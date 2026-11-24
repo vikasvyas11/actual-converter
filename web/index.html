@@ -1,1 +1,127 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Convert HEIC photos and videos privately in your browser with actual converter."><title>actual converter — files, made usable</title></head><body><header><a class="brand" href="./">⇄ actual converter</a><a href="https://github.com/vikasvyas11/actual-converter">Open source ↗</a></header><main><p class="eyebrow">YOUR FILES. YOUR DEVICE.</p><h1>Make it a format<br>you can <em>actually use.</em></h1><p class="intro">iPhone photos, everyday images, and video clips.<br>Convert them right here, in your browser.</p><section class="desk"><div><button id="drop" class="drop"><span class="cards"><i>HEIC</i><i>JPG</i></span><strong>Drop your files here</strong><span>or click to choose files</span></button><input id="files" type="file" multiple hidden><div class="queue-head"><h2>Your files <span id="count">0</span></h2><button id="clear" class="quiet">Clear all</button></div><ul id="queue"></ul><p id="empty">A fresh start. Add a file to begin.</p></div><aside><h2>Make it yours</h2><label>Convert to<select id="format"><optgroup label="Image"><option value="jpg">JPG image</option><option value="png">PNG image</option><option value="webp">WebP image</option></optgroup><optgroup label="Video"><option value="mp4">MP4 video</option><option value="webm">WebM video</option><option value="gif">Animated GIF</option></optgroup></select></label><label>Quality<select id="quality"><option value="0.85">Balanced</option><option value="0.95">High quality</option><option value="0.7">Smaller file</option></select></label><p id="hint">Images use the first frame. JPG uses a white background.</p><button id="convert" class="primary" disabled>Convert files</button><p id="status" role="status" aria-live="polite">Ready when you are.</p></aside></section><div class="details"><article><h2>Private by design</h2><p>Your media stays in this tab. Conversion uses your device’s memory. Clear the queue or close the tab to release it.</p></article><article><h2>A little room to work</h2><p>20 MB per image · 100 MB per video<br>10 files · 200 MB per batch<br>Images up to 40 megapixels.</p></article><article><h2>Built for everyday files</h2><p>HEIC, JPG, PNG, WebP and GIF images. MP4, MOV, WebM, MKV and AVI videos. Codec support varies.</p></article></div><details><summary>What happens when I convert a file?</summary><p>The site downloads conversion libraries from jsDelivr, then processes your files locally. That provider receives normal connection information, such as your IP address, but your media is never uploaded. Video tools download about 32 MB on first use. Keep this tab open until conversion finishes. Video conversion can be slow on phones. Metadata and animation may be lost when saving still images.</p></details></main><footer>actual converter <span>Free to use. Open to everyone.</span><a href="https://github.com/vikasvyas11/actual-converter/releases">Get the Windows app</a></footer><script type="module" src="/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Convert HEIC photos and videos privately in your browser with actual converter.">
+  <title>actual converter — files, made usable</title>
+</head>
+<body>
+  <div class="ann">
+    <span>ON-DEVICE MEDIA CONVERSION · ZERO UPLOADS · OPEN SOURCE</span>
+    <a href="https://github.com/vikasvyas11/actual-converter/releases">Windows app ↗</a>
+  </div>
+
+  <header class="hdr">
+    <div class="hdr__in">
+      <a id="brand-logo" class="brand" href="./" aria-label="actual converter home">
+        <canvas id="brand-fx" class="brand__fx" aria-hidden="true"></canvas>
+        <canvas id="brand-mark" class="brand__mark" width="32" height="32" aria-hidden="true"></canvas>
+        <span class="brand__name">actual converter</span>
+      </a>
+      <nav class="nav">
+        <a href="https://github.com/vikasvyas11/actual-converter/releases">Windows app</a>
+        <a href="https://github.com/vikasvyas11/actual-converter">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-head">
+      <p class="eyebrow">LOCAL · YOUR DEVICE · PRIVATE</p>
+      <h1>Make it a format<br>you can <em>actually use.</em></h1>
+      <p class="intro">iPhone photos, everyday images, and video clips. Convert them right here in your browser with zero uploads.</p>
+    </div>
+
+    <section class="desk">
+      <div class="desk__main">
+        <div class="drop-frame">
+          <canvas id="drop-fx" class="grid-fx" aria-hidden="true"></canvas>
+          <button id="drop" class="drop" type="button">
+            <span class="cards">
+              <i>HEIC</i>
+              <span class="cards__arrow" aria-hidden="true">→</span>
+              <i>JPG</i>
+            </span>
+            <strong>Drop your files here</strong>
+            <span class="drop__sub">OR CLICK TO BROWSE · UP TO 10 FILES</span>
+          </button>
+        </div>
+        <input id="files" type="file" multiple hidden>
+
+        <div class="queue-head">
+          <h2>YOUR FILES <span id="count">0</span></h2>
+          <button id="clear" class="quiet" type="button">CLEAR ALL</button>
+        </div>
+        <ul id="queue"></ul>
+        <p id="empty">A fresh start. Add a file to begin.</p>
+      </div>
+
+      <aside class="desk__side">
+        <p class="side-eyebrow">OUTPUT</p>
+        <h2>Make it yours</h2>
+        <label>Convert to
+          <select id="format">
+            <optgroup label="Image">
+              <option value="jpg">JPG image</option>
+              <option value="png">PNG image</option>
+              <option value="webp">WebP image</option>
+            </optgroup>
+            <optgroup label="Video">
+              <option value="mp4">MP4 video</option>
+              <option value="webm">WebM video</option>
+              <option value="gif">Animated GIF</option>
+            </optgroup>
+          </select>
+        </label>
+        <label>Quality
+          <select id="quality">
+            <option value="0.85">Balanced</option>
+            <option value="0.95">High quality</option>
+            <option value="0.7">Smaller file</option>
+          </select>
+        </label>
+        <p id="hint">Images use the first frame. JPG uses a white background.</p>
+        <button id="convert" class="primary" type="button" disabled>CONVERT FILES →</button>
+        <p id="status" role="status" aria-live="polite">Ready when you are.</p>
+      </aside>
+    </section>
+
+    <div class="details">
+      <article>
+        <span class="detail-idx">01 / PRIVACY</span>
+        <h2>Private by design</h2>
+        <p>Your media stays in this tab. Conversion uses your device’s memory. Clear the queue or close the tab to release it.</p>
+      </article>
+      <article>
+        <span class="detail-idx">02 / LIMITS</span>
+        <h2>A little room to work</h2>
+        <p>20 MB per image · 100 MB per video<br>10 files · 200 MB per batch<br>Images up to 40 megapixels.</p>
+      </article>
+      <article>
+        <span class="detail-idx">03 / FORMATS</span>
+        <h2>Built for everyday files</h2>
+        <p>HEIC, JPG, PNG, WebP and GIF images. MP4, MOV, WebM, MKV and AVI videos. Codec support varies.</p>
+      </article>
+    </div>
+
+    <details>
+      <summary>What happens when I convert a file?</summary>
+      <p>The site downloads conversion libraries from jsDelivr, then processes your files locally. That provider receives normal connection information, such as your IP address, but your media is never uploaded. Video tools download about 32 MB on first use. Keep this tab open until conversion finishes. Video conversion can be slow on phones. Metadata and animation may be lost when saving still images.</p>
+    </details>
+  </main>
+
+  <footer class="foot">
+    <div id="foot-zone" class="foot__zone" aria-hidden="true">
+      <canvas id="foot-canvas"></canvas>
+    </div>
+    <div class="foot__bar">
+      <span class="foot__brand">ACTUAL CONVERTER</span>
+      <span class="foot__copy">Free to use. Open to everyone.</span>
+      <a href="https://github.com/vikasvyas11/actual-converter/releases">Get the Windows app ↗</a>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

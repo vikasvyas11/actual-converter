@@ -1,6 +1,8 @@
 import './style.css';
 import { FFmpeg } from '@ffmpeg/ffmpeg';
 import { toBlobURL } from '@ffmpeg/util';
+import { initPixelEffects } from './pixel-fx.js';
+initPixelEffects();
 const $ = id => document.getElementById(id);
 const imageTypes = /\.(heic|heif|jpg|jpeg|png|webp|gif)$/i;
 const videoTypes = /\.(mp4|mov|webm|mkv|avi)$/i;
